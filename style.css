@@ -24,21 +24,55 @@ body {
 }
 
 .navbar-brand span {
-    color: #FF474D
+    color: #FF474D;
 }
 
 .navbar-dark .navbar-nav .nav-link {
+    position: relative;
     color: rgba(255, 255, 255, 0.9);
+    font-weight: 750;
     margin: 0 0.5rem;
-    font-weight: 500;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
+/* Hover effect for underline and color */
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link:focus {
-    color: #FF474D
+    color: #FF474D;
 }
 
+.navbar-dark .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #FF474D;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* Hover effect for underline */
+.navbar-dark .navbar-nav .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Active state for nav-link (when scrolling) */
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.active-route {
+    color: #FF474D !important;
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link.active::after,
+.navbar-dark .navbar-nav .nav-link.active-route::after {
+    width: 100%;
+    left: 0;
+    background-color: #FF474D;
+}
+
+/* Register Button */
 .register-btn {
     background-color: transparent;
     border: 2px solid #FF474D;
@@ -105,13 +139,16 @@ body {
     .hero-content h1 {
         font-size: 2.5rem;
     }
+
     .hero-content p {
         font-size: 1rem;
     }
+
     .explore-btn {
         padding: 0.8rem 2rem;
         font-size: 1rem;
     }
+
     /* Mobile navbar background */
     .navbar-collapse.show, 
     .navbar-collapse.collapsing {
@@ -121,14 +158,99 @@ body {
     }
 }
 
-.contentDiv {
-    position: relative;
+/* FAQ Section Styles */
+.faq-section {
+    background-color: #0f0f0f;
+    padding: 6rem 0;
 }
 
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-title .highlight {
+    color: #FF474D;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.faq-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.faq-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: #FF474D;
+}
+
+.faq-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #FF474D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.faq-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.faq-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.faq-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .faq-card {
+        padding: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .faq-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .faq-icon img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Bouncing Arrow Animation */
 @keyframes bouncing {
-    0% {bottom: 0;}
-    50% {bottom: 20px;}
-    100% {bottom: 0;}
+    0% { bottom: 0; }
+    50% { bottom: 20px; }
+    100% { bottom: 0; }
 }
 
 .arrow {
@@ -141,4 +263,3 @@ body {
     position: absolute;
     width: 50px;
 }
-

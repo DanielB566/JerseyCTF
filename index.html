@@ -39,10 +39,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" :class="{ 'active': isActive('#home') }" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">FAQ</a>
+                            <a class="nav-link" :class="{ 'active': isActive('#faq') }" href="#faq">FAQ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Resources</a>
@@ -60,7 +60,7 @@
         </nav>
 
         <!-- Hero Section-->
-        <section class="hero-section">
+        <section class="hero-section" id="home">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-8">
@@ -80,6 +80,75 @@
     </div>
     </section>
 
+    <!-- FAQ Section -->
+<section class="faq-section" id="faq">
+    <div class="container py-5">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-10 text-center">
+                <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
+                <p class="section-subtitle">Everything you need to know about JerseyCTF</p>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <!-- FAQ Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <img src="imgs/question-icon.png" alt="Question mark icon">
+                    </div>
+                    <h3>What is JerseyCTF?</h3>
+                    <p>JerseyCTF is an annual cybersecurity capture the flag competition where participants solve challenges across various security domains including cryptography, web exploitation, forensics, and more.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Card 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <img src="imgs/compete-icon.png" alt="Competition icon">
+                    </div>
+                    <h3>How can I compete?</h3>
+                    <p>You can compete individually or as part of a team. Simply register through our website, create an account on our CTF platform, and you'll be ready to participate when the competition starts.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Card 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <img src="imgs/tools-icon.png" alt="Tools icon">
+                    </div>
+                    <h3>What do I need to compete?</h3>
+                    <p>A computer with internet access, basic cybersecurity knowledge, and tools like Wireshark, Python, or Kali Linux. Beginners are welcome too - we have challenges for all skill levels.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Card 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <img src="imgs/size-icon.png" alt="Size icon">
+                    </div>
+                    <h3>How big is JerseyCTF?</h3>
+                    <p>JerseyCTF has grown to become one of the largest student-run CTF competitions in the United States, with thousands of participants from across the globe joining each year.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Card 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <img src="imgs/prize-icon.png" alt="Prize icon">
+                    </div>
+                    <h3>Will there be prizes?</h3>
+                    <p>Yes! We offer prizes for top performers across different categories and divisions. Prizes include cash rewards, tech gadgets, swag, and opportunities to connect with industry professionals.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     </div>
 
@@ -95,7 +164,7 @@
 
 
 
-
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <!-- Bootstrap JavaScript Libraries -->
