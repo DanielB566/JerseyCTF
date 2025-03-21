@@ -42,27 +42,3 @@ const app = Vue.createApp({
     }
 }).mount('#app');
 
-// jQuery smooth scrolling and active link management
-$(document).ready(function() {
-    // Smooth scrolling for anchor links
-    $("a").on('click', function(event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 1, function(){
-                window.location.hash = hash;
-            });
-        }
-    });
-
-    // Add active class to the navbar link when clicked
-    $("a").on('click', function() {
-        // Remove active class from all links
-        $(".navbar-nav .nav-link").removeClass("active");
-
-        // Add active class to the clicked link
-        $(this).addClass("active");
-    });
-});
