@@ -49,13 +49,13 @@ const app = Vue.createApp({
     const resourceData = [
         {
             title: "JerseyCTF 2024",
-            imageUrl: "https://picsum.photos/600/400",
+            imageUrl: "imgs/JCTFIV.png",
             writeupUrl: "https://ctftime.org/event/2230/tasks/",
             techTalkUrl: "https://www.youtube.com/playlist?list=PLrcTWWy-esnD_HhRIpgMM5dIBiCDr9K4z"
         },
         {
             title: "JerseyCTF 2023",
-            imageUrl: "https://picsum.photos/600/400",
+            imageUrl: "imgs/JCTFIII.png",
             writeupUrl: "https://ctftime.org/event/1908/tasks/",
             techTalkUrl: "https://www.youtube.com/playlist?list=PLrcTWWy-esnDXi3khogdlAgkisL19IM08"
         },
