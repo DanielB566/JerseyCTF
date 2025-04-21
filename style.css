@@ -97,7 +97,7 @@
         display: flex;
         align-items: center;
         text-align: center;
-        padding: 6rem 0; 
+        padding: 6rem 0;
     }
 
     .hero-content h1 {
@@ -150,7 +150,7 @@
         }
 
         /* Mobile navbar background */
-        .navbar-collapse.show, 
+        .navbar-collapse.show,
         .navbar-collapse.collapsing {
             background-color: rgba(17, 17, 17, 0.95);
             margin: 0 -1.5rem;
@@ -231,16 +231,16 @@
         .faq-card {
             padding: 1.5rem;
         }
-        
+
         .section-title {
             font-size: 2rem;
         }
-        
+
         .faq-icon {
             width: 50px;
             height: 50px;
         }
-        
+
         .faq-icon img {
             width: 25px;
             height: 25px;
@@ -249,9 +249,17 @@
 
     /* Bouncing Arrow Animation */
     @keyframes bouncing {
-        0% { bottom: 0; }
-        50% { bottom: 20px; }
-        100% { bottom: 0; }
+        0% {
+            bottom: 0;
+        }
+
+        50% {
+            bottom: 20px;
+        }
+
+        100% {
+            bottom: 0;
+        }
     }
 
     .arrow {
@@ -269,157 +277,177 @@
 
 
     /* Resources Section Styles - Improved Responsiveness */
-.resources-section {
-    background-color: #0f0f0f;
-    padding: 3rem 0;
-    min-height: 100vh;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-    .section-title {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .section-title {
-        font-size: 1.75rem;
-    }
-}
-
-.section-title .highlight {
-    color: #FF474D;
-}
-
-.section-subtitle {
-    font-size: 1.2rem;
-    opacity: 0.8;
-    margin-bottom: 2rem;
-}
-
-@media (max-width: 576px) {
-    .section-subtitle {
-        font-size: 1rem;
-    }
-}
-
-.card-custom {
-    background-color: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    color: #fff;
-    height: 100%;
-}
-
-.card-custom:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    border-color: #FF474D;
-}
-
-.img-container {
-    overflow: hidden;
-}
-
-.report-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-@media (min-width: 992px) {
-    .report-img {
-        height: 250px;
-    }
-}
-
-@media (max-width: 576px) {
-    .report-img {
-        height: 200px;
-    }
-}
-
-.card-custom:hover .report-img {
-    transform: scale(1.05);
-}
-
-.report-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 1rem;
-    line-height: 1.4;
-}
-
-@media (max-width: 576px) {
-    .report-title {
-        font-size: 1.1rem;
-    }
-}
-
-.resource-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.download-link,
-.tech-talk-link {
-    color: #FF474D;
-    text-decoration: none;
-    font-weight: 600;
-    position: relative;
-    transition: color 0.3s ease;
-    font-size: 0.95rem;
-}
-
-.download-link:hover,
-.tech-talk-link:hover {
-    color: #fff;
-}
-
-.download-link::after,
-.tech-talk-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -3px;
-    left: 0;
-    background-color: #fff;
-    transition: width 0.3s ease;
-}
-
-.download-link:hover::after,
-.tech-talk-link:hover::after {
-    width: 100%;
-}
-
-/* Improved spacing for smaller screens */
-@media (max-width: 768px) {
     .resources-section {
-        padding: 2rem 0;
+        background-color: #0f0f0f;
+        padding: 3rem 0;
+        min-height: 100vh;
     }
-    
-    .card-body {
-        padding: 1rem;
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
     }
-}
+
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .section-title {
+            font-size: 1.75rem;
+        }
+    }
+
+    .section-title .highlight {
+        color: #FF474D;
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+        opacity: 0.8;
+        margin-bottom: 2rem;
+    }
+
+    @media (max-width: 576px) {
+        .section-subtitle {
+            font-size: 1rem;
+        }
+    }
+
+    .card-custom {
+        background-color: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        color: #fff;
+        height: 100%;
+        padding: 2rem;
+        /* NEW or increased padding */
+    }
+
+    .card-custom:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        border-color: #FF474D;
+    }
+
+    .img-container {
+        overflow: hidden;
+    }
+
+    .report-img {
+        width: 100%;
+        /* Full width of container */
+        height: auto;
+        /* Maintain aspect ratio */
+        object-fit: cover;
+        /* Crop to fill container while covering it */
+        display: block;
+    }
+
+    @media (min-width: 992px) {
+        .report-img {
+            height: 250px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .report-img {
+            height: 200px;
+        }
+    }
+
+    .card-custom:hover .report-img {
+        transform: scale(1.05);
+    }
+
+    .report-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 576px) {
+        .report-title {
+            font-size: 1.1rem;
+        }
+    }
+
+    .resource-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .download-link,
+    .tech-talk-link {
+        color: #FF474D;
+        text-decoration: none;
+        font-weight: 600;
+        position: relative;
+        transition: color 0.3s ease;
+        font-size: 0.95rem;
+    }
+
+    .download-link:hover,
+    .tech-talk-link:hover {
+        color: #fff;
+    }
+
+    .download-link::after,
+    .tech-talk-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -3px;
+        left: 0;
+        background-color: #fff;
+        transition: width 0.3s ease;
+    }
+
+    .download-link:hover::after,
+    .tech-talk-link:hover::after {
+        width: 100%;
+    }
+
+    /* Improved spacing for smaller screens */
+    @media (max-width: 768px) {
+        .resources-section {
+            padding: 2rem 0;
+        }
+
+        .card-body {
+            padding: 1rem;
+        }
+    }
 
 
+    .img-mobile {
+        display: none;
+    }
 
+    .img-desktop {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 
+    /* On small screens, swap them */
+    @media screen and (max-width: 768px) {
+        .img-desktop {
+            display: none;
+        }
 
-
-
-
-    
+        .img-mobile {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
