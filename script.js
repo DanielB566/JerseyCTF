@@ -114,3 +114,61 @@ function createResourceCards() {
 
 // Initialize the cards
 createResourceCards();
+
+
+
+
+
+// JavaScript for the sponsors carousel
+document.addEventListener('DOMContentLoaded', function() {
+    // Pause animation on hover
+    const sponsorsTrack = document.querySelector('.sponsors-track');
+    
+    if (sponsorsTrack) {
+        sponsorsTrack.addEventListener('mouseenter', function() {
+            this.style.animationPlayState = 'paused';
+        });
+        
+        sponsorsTrack.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'running';
+        });
+        
+        // Adjust animation speed based on screen width
+        function adjustScrollSpeed() {
+            const width = window.innerWidth;
+            let duration;
+            
+            if (width < 576) {
+                duration = '20s'; // Faster on small screens
+            } else if (width < 992) {
+                duration = '25s'; // Medium speed on medium screens
+            } else {
+                duration = '30s'; // Normal speed on large screens
+            }
+            
+            sponsorsTrack.style.animationDuration = duration;
+        }
+        
+        // Initial adjustment
+        adjustScrollSpeed();
+        
+        // Adjust on window resize
+        window.addEventListener('resize', adjustScrollSpeed);
+    }
+});
+
+// Optional: Check if images exist and replace with placeholders if not
+function checkImages() {
+    const sponsorLogos = document.querySelectorAll('.sponsor-logo');
+    
+    sponsorLogos.forEach(logo => {
+        logo.onerror = function() {
+            // If image fails to load, replace with a placeholder or text
+            this.onerror = null;
+            this.src = 'path/to/placeholder.png'; // Replace with your placeholder path
+            this.alt = this.alt + ' (Logo)';
+        };
+    });
+}
+
+window.addEventListener('load', checkImages);
