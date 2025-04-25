@@ -139,11 +139,11 @@ document.addEventListener('DOMContentLoaded', function() {
             let duration;
             
             if (width < 576) {
-                duration = '20s'; // Faster on small screens
+                duration = '15s'; // Faster on small screens
             } else if (width < 992) {
-                duration = '25s'; // Medium speed on medium screens
+                duration = '15s'; // Medium speed on medium screens
             } else {
-                duration = '30s'; // Normal speed on large screens
+                duration = '15s'; // Normal speed on large screens
             }
             
             sponsorsTrack.style.animationDuration = duration;
@@ -172,3 +172,115 @@ function checkImages() {
 }
 
 window.addEventListener('load', checkImages);
+
+
+
+
+
+
+// Contact Form Validation and Submission
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Basic form validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            let isValid = true;
+            
+            // Reset previous error states
+            document.querySelectorAll('.is-invalid').forEach(el => {
+                el.classList.remove('is-invalid');
+            });
+            
+            // Validate name
+            if (name === '') {
+                document.getElementById('name').classList.add('is-invalid');
+                isValid = false;
+            }
+            
+            // Validate email
+            if (email === '' || !isValidEmail(email)) {
+                document.getElementById('email').classList.add('is-invalid');
+                isValid = false;
+            }
+            
+            // Validate message
+            if (message === '') {
+                document.getElementById('message').classList.add('is-invalid');
+                isValid = false;
+            }
+            
+            // If form is valid, proceed with submission
+            if (isValid) {
+                // In a real implementation, you would send this data to your server
+                // For demo purposes, we'll just show a success message
+                showFormSuccess();
+            }
+        });
+    }
+    
+    // Email validation helper function
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    // Show success message
+    function showFormSuccess() {
+        const formElements = contactForm.elements;
+        
+        // Disable form elements during "submission"
+        for (let i = 0; i < formElements.length; i++) {
+            formElements[i].disabled = true;
+        }
+        
+        // Change button text to show processing
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        
+        // Simulate form submission (replace with actual AJAX in production)
+        setTimeout(function() {
+            // Reset the form
+            contactForm.reset();
+            
+            // Create success alert
+            const successAlert = document.createElement('div');
+            successAlert.className = 'alert alert-success mt-3';
+            successAlert.textContent = 'Your message has been sent successfully!';
+            contactForm.appendChild(successAlert);
+            
+            // Re-enable form elements
+            for (let i = 0; i < formElements.length; i++) {
+                formElements[i].disabled = false;
+            }
+            
+            // Restore button text
+            submitBtn.textContent = originalBtnText;
+            
+            // Remove success message after 5 seconds
+            setTimeout(function() {
+                successAlert.remove();
+            }, 5000);
+        }, 1500);
+    }
+});
+
+// Form floating labels enhancement (optional)
+const formControls = document.querySelectorAll('.form-control');
+formControls.forEach(control => {
+    control.addEventListener('focus', function() {
+        this.parentElement.classList.add('focused');
+    });
+    
+    control.addEventListener('blur', function() {
+        if (this.value === '') {
+            this.parentElement.classList.remove('focused');
+        }
+    });
+});
